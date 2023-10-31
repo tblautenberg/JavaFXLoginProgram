@@ -1,4 +1,4 @@
-// Alle de froskellige inputs til javaFX og mysql
+// All the libs i use for mysql and JavaFX
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,7 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-// Controller classen til login siden - det her inkludere login, ny bruger og cancel funktionen
+// Controller class to handle all the stuff that happens on the login scene
+
 public class ControllerLogIn 
 {
 
@@ -46,7 +47,8 @@ public class ControllerLogIn
 
 
 
-        // Database connection details
+    // Database connection details
+
     private static final String url = "jdbc:mysql://localhost:3306/mydb"; // URL for the database connection
     private static final String user = "root"; // Database username
     private static final String password = "ostemad123"; // Database password
@@ -54,21 +56,25 @@ public class ControllerLogIn
     private Connection connection; // Connection object for connecting to the database
 
     // Constructor to establish the database connection
+
     public ControllerLogIn() 
     {
-        try {
-            // Attempt to establish the connection to the database
-            connection = DriverManager.getConnection(url, user, password); // Java DriveManager holder styr på de drivers der skal bruges til at connecte til en database.
-        } catch (Exception e) {
-            // Print the stack trace if an exception occurs during the connection attempt // Stack trace viser vejen problemet.
-            e.printStackTrace();
+        try 
+        {
+        // Attempt to establish the connection to the database
+        connection = DriverManager.getConnection(url, user, password); // Java drive manager handles all the drivers i use to connect to the DB
+        } catch (Exception e) 
+        {
+        // Print the stack trace if an exception occurs during the connection attempt // Stack trace viser vejen problemet.
+        e.printStackTrace();
         }
     }
 
 
 
     @FXML
-    void createNewUser(ActionEvent event) {
+    void createNewUser(ActionEvent event) 
+    {
         // Open a new window or dialog for inputting the new user's details
         // You can use JavaFX's Stage and Scene for this purpose
         Stage newUserStage = new Stage();
@@ -85,7 +91,8 @@ public class ControllerLogIn
             String newPassword = newPasswordField.getText();
     
             // Validate the input fields
-            if (newUsername.isEmpty() || newPassword.isEmpty()) {
+            if (newUsername.isEmpty() || newPassword.isEmpty()) 
+            {
                 showAlert("Error", "Username or password cannot be blank.");
                 return;
             }
@@ -97,11 +104,13 @@ public class ControllerLogIn
                 ResultSet resultSet = checkStatement.executeQuery();
                 resultSet.next();
                 int count = resultSet.getInt(1);
-                if (count > 0) {
+                if (count > 0) 
+                {
                 showAlert("Error", "User already exists - please enter a new username and password. If this is you.");
                 return;
                 }
-            } catch (SQLException e) {
+            } catch (SQLException e) 
+            {
                 // Handle any potential errors here
                 e.printStackTrace();
                 return;
@@ -121,7 +130,8 @@ public class ControllerLogIn
                 } else {
                 showAlert("Error", "Failed to create user");
                 }
-            } catch (SQLException e) {
+            } catch (SQLException e) 
+            {
                 // Handle any potential errors here
                 e.printStackTrace();
             }
@@ -173,11 +183,14 @@ public class ControllerLogIn
             {
                 // If the result set has data, it means the login was successful
                 showAlert("Login Successful", "Welcome " + enteredUsername + ".");
-            } else {
+            } 
+            else 
+            {
                 // If the result set is empty, the login failed
                 showAlert("Login Failed", "Invalid username or password.");
             }
-        } catch (Exception e) {
+        } catch (Exception e) 
+        {
             // Print the stack trace if an exception occurs during the login process
             e.printStackTrace();
         }
@@ -186,7 +199,8 @@ public class ControllerLogIn
     // Other utility methods...
 
     // Method for displaying an alert
-    private void showAlert(String title, String content) {
+    private void showAlert(String title, String content) 
+    {
         // Create an alert of type INFORMATION
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title); // Set the title of the alert

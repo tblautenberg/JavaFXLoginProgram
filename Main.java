@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 public class Main extends Application 
 {
 
+    // Main scene here
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         String fxmlPath = "LoginScene.fxml";
