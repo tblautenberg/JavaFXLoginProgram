@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.base.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.controls.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.fxml.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.graphics.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.media.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
+        "g:\\My Drive\\Datamatiker\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar",
+        "g:\\My Drive\\Datamatiker\\SQLJar\\mysql-connector-j-8.2.0.jar"
+    ]
+}
